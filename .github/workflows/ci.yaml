@@ -1,0 +1,20 @@
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      -
+        name: Test Report
+        uses: dorny/test-reporter@v1.5.0
+        if: success() || failure()
+        with:
+          name: "Unit test report"
+          path: 'jest-junit.xml'
+          reporter: jest-junit
+
