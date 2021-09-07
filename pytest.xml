@@ -28,9 +28,6 @@
 		<testcase classname="tests.domain.test_xmlparser" name="test_get_arkivtype_failure" time="0.001" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__get_title_success" time="0.001" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__get_title_failure" time="0.001" />
-		<testcase classname="tests.domain.test_xmlparser" name="test__get_checksum" time="0.001" />
-		<testcase classname="tests.domain.test_xmlparser" name="test__get_avgiver_navn" time="0.001" />
-		<testcase classname="tests.domain.test_xmlparser" name="test__get_avgiver_epost" time="0.001" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__get_arkiv_startdato" time="0.001" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__get_arkiv_sluttdato" time="0.001" />
 		<testcase classname="tests.domain.test_xmlparser" name="test_get_storrelse_success" time="0.001" />
