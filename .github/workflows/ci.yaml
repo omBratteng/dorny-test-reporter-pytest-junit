@@ -16,5 +16,5 @@ jobs:
         with:
           name: "Unit test report"
           path: 'jest-junit.xml'
-          reporter: jest-junit
+          reporter: java-junit
 
