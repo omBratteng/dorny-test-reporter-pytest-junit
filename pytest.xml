@@ -18,7 +18,6 @@
 		<testcase classname="tests.connectors.sas_generator.test_models" name="test_SASTokenRequest" time="0.001" />
 		<testcase classname="tests.database.mappers.test_metadatafil" name="test_map_dbo2model" time="0.011" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__get_all_namespaces" time="0.001" />
-		<testcase classname="tests.domain.test_xmlparser" name="test__get_objekt_id" time="0.001" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Noark 5 - Sakarkiv-Noark5]" time="0.000" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Noark 3 - Sakarkiv-Noark3]" time="0.000" />
 		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Fagsystem-Fagsystem]" time="0.001" />
