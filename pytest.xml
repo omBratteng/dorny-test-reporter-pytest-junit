@@ -1,37 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="12" failures="0" errors="0" time="11.283">
-  <testsuite name="src/__tests__/components/layout/Main.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-07T15:32:39" time="10.206" tests="2">
-    <testcase classname="&lt;Main /&gt;" name="It renders" time="0.05">
-    </testcase>
-    <testcase classname="&lt;Main /&gt;" name="It renders with sidebar open" time="0.013">
-    </testcase>
-  </testsuite>
-  <testsuite name="src/__tests__/components/layout/Paper.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-07T15:32:39" time="10.212" tests="3">
-    <testcase classname="&lt;Paper /&gt;" name="It renders" time="0.039">
-    </testcase>
-    <testcase classname="&lt;Paper /&gt;" name="It renders with title" time="0.009">
-    </testcase>
-    <testcase classname="&lt;Paper /&gt;" name="It renders with header" time="0.014">
-    </testcase>
-  </testsuite>
-  <testsuite name="src/__tests__/pages/arkivuttrekk/[id].tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-07T15:32:39" time="10.234" tests="1">
-    <testcase classname="Arkivuttrekk side" name="It renders" time="0.087">
-    </testcase>
-  </testsuite>
-  <testsuite name="src/__tests__/components/layout/Sidebar/Sidebar.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-07T15:32:39" time="10.253" tests="4">
-    <testcase classname="&lt;Sidebar /&gt;" name="It renders" time="0.062">
-    </testcase>
-    <testcase classname="&lt;Sidebar /&gt;" name="It renders with sidebar open" time="0.022">
-    </testcase>
-    <testcase classname="&lt;Sidebar /&gt;" name="It triggers keyDown eventlistener on Escape keydown" time="0.012">
-    </testcase>
-    <testcase classname="&lt;Sidebar /&gt;" name="It does not trigger keyDown eventlistener on Enter keydown" time="0.011">
-    </testcase>
-  </testsuite>
-  <testsuite name="src/__tests__/components/layout/NavBar.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-07T15:32:39" time="10.26" tests="2">
-    <testcase classname="&lt;NavBar /&gt;" name="It renders" time="0.088">
-    </testcase>
-    <testcase classname="&lt;NavBar /&gt;" name="It renders with sidebar open" time="0.025">
-    </testcase>
-  </testsuite>
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testsuite name="pytest" errors="0" failures="1" skipped="0" tests="47" time="0.619" timestamp="2021-09-07T18:07:31.948227" hostname="Midgard">
+		<testcase classname="tests.connectors.argo_workflows.test_models" name="test_workflow_overforingspakke_response_from_string" time="0.001" />
+		<testcase classname="tests.connectors.argo_workflows.test_models" name="test_workflow_overforingspakke_response_from_string_without_bucket" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopirequest_equals" time="0.001" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopirequest_not_equals" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopirequest_from_parameters_when_archive" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopirequest_from_parameters_when_object" time="0.001" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopirequest_from_parameters_no_blob_info_when_missing_parameter" time="0.001" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopirequest_as_json" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopistatus_response_equals" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopistatus_response_not_equals" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopistatus_response_not_equals_status" time="0.000" />
+		<testcase classname="tests.connectors.arkiv_downloader.test_models" name="test_arkivkopistatus_response_from_string" time="0.000" />
+		<testcase classname="tests.connectors.mailgun.test_models" name="test_invitasjon_melding_as_base64_url" time="0.001" />
+		<testcase classname="tests.connectors.mailgun.test_models" name="test_mailgun_email" time="0.007" />
+		<testcase classname="tests.connectors.sas_generator.test_models" name="test_SASTokenRequest" time="0.001">
+			<failure message="AssertionError: assert {'container':...on_hours': 24} == {'container':...fdbcc9559b-0'}&#10;  Omitting 1 identical items, use -vv to show&#10;  Left contains 1 more item:&#10;  {'duration_hours': 24}&#10;  Use -v to get the full diff">def test_SASTokenRequest():
+        """
+        GIVEN   static input data to SASTokenRequest
+        WHEN    calling the method as_json()
+        THEN    verify that the correct json string is returned
+        """
+    
+        expected = {"container": "e2ea3677-a0c6-4979-b478-fafdbcc9559b-0"}
+        request = SASTokenRequest(container_id=CONTAINER, duration_hours=24)
+    
+&gt;       assert request.as_json_dict() == expected
+E       AssertionError: assert {'container':...on_hours': 24} == {'container':...fdbcc9559b-0'}
+E         Omitting 1 identical items, use -vv to show
+E         Left contains 1 more item:
+E         {'duration_hours': 24}
+E         Use -v to get the full diff
+
+tests/connectors/sas_generator/test_models.py:16: AssertionError</failure>
+		</testcase>
+		<testcase classname="tests.database.mappers.test_metadatafil" name="test_map_dbo2model" time="0.011" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_all_namespaces" time="0.002" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_objekt_id" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Noark 5 - Sakarkiv-Noark5]" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Noark 3 - Sakarkiv-Noark3]" time="0.000" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Fagsystem-Fagsystem]" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[SIARD-arkivuttrekk fra sak- arkivl\xf8sningen ePhorte fra Utdanningsdirektoratet 2004-2017.-SIARD]" time="0.000" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__str_2_arkivuttrekk_type[Feilaktig verdi som inneholder tallet 5-None]" time="0.000" />
+		<testcase classname="tests.domain.test_xmlparser" name="test_get_arkivtype_success" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test_get_arkivtype_failure" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_title_success" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_title_failure" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_checksum" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_avgiver_navn" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_avgiver_epost" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_arkiv_startdato" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test__get_arkiv_sluttdato" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test_get_storrelse_success" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test_get_avtalenummer_success" time="0.001" />
+		<testcase classname="tests.domain.test_xmlparser" name="test_create_metadata_from_parsed_metadatafil" time="0.001" />
+		<testcase classname="tests.domain.models.test_Arkivkopi" name="test_arkivkopi_request_parameters" time="0.001" />
+		<testcase classname="tests.domain.models.test_Arkivkopi" name="test_arkivkopi_create_from" time="0.030" />
+		<testcase classname="tests.domain.models.test_Invitasjon" name="test_eq" time="0.000" />
+		<testcase classname="tests.domain.models.test_Invitasjon" name="test_eq_with_matching_overforingspakke" time="0.001" />
+		<testcase classname="tests.domain.models.test_Invitasjon" name="test_eq_without_matching_overforingspakke" time="0.001" />
+		<testcase classname="tests.domain.models.test_Metadatafil" name="test_as_metadata" time="0.001" />
+		<testcase classname="tests.routers.dto.test_Arkivuttrekk" name="test_to_domain" time="0.001" />
+		<testcase classname="tests.routers.dto.test_Metadata" name="test_from_domain" time="0.001" />
+		<testcase classname="tests.routers.mappers.test_metadatafil" name="test__content_type2metadata_type__success" time="0.001" />
+		<testcase classname="tests.routers.mappers.test_metadatafil" name="test__content_type2metadata_type__failure" time="0.000" />
+		<testcase classname="tests.routers.mappers.test_metadatafil" name="test__get_file_content" time="0.001" />
+		<testcase classname="tests.routers.mappers.test_metadatafil" name="test_metadatafil_mapper" time="0.001" />
+	</testsuite>
 </testsuites>
