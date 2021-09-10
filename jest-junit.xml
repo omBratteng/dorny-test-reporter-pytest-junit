@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="12" failures="0" errors="0" time="15.102">
+  <testsuite name="src/__tests__/components/layout/Main.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-10T08:25:01" time="13.696" tests="2">
+    <testcase classname="&lt;Main /&gt;" name="It renders" time="0.056">
+    </testcase>
+    <testcase classname="&lt;Main /&gt;" name="It renders with sidebar open" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/components/layout/Paper.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-10T08:25:01" time="13.698" tests="3">
+    <testcase classname="&lt;Paper /&gt;" name="It renders" time="0.042">
+    </testcase>
+    <testcase classname="&lt;Paper /&gt;" name="It renders with title" time="0.012">
+    </testcase>
+    <testcase classname="&lt;Paper /&gt;" name="It renders with header" time="0.02">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/pages/arkivuttrekk/[id].tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-10T08:25:01" time="13.726" tests="1">
+    <testcase classname="Arkivuttrekk side" name="It renders" time="0.098">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/components/layout/Sidebar/Sidebar.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-10T08:25:01" time="13.742" tests="4">
+    <testcase classname="&lt;Sidebar /&gt;" name="It renders" time="0.072">
+    </testcase>
+    <testcase classname="&lt;Sidebar /&gt;" name="It renders with sidebar open" time="0.021">
+    </testcase>
+    <testcase classname="&lt;Sidebar /&gt;" name="It triggers keyDown eventlistener on Escape keydown" time="0.012">
+    </testcase>
+    <testcase classname="&lt;Sidebar /&gt;" name="It does not trigger keyDown eventlistener on Enter keydown" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="src/__tests__/components/layout/NavBar.test.tsx" errors="0" failures="0" skipped="0" timestamp="2021-09-10T08:25:01" time="13.752" tests="2">
+    <testcase classname="&lt;NavBar /&gt;" name="It renders" time="0.096">
+    </testcase>
+    <testcase classname="&lt;NavBar /&gt;" name="It renders with sidebar open" time="0.034">
+    </testcase>
+  </testsuite>
+</testsuites>
