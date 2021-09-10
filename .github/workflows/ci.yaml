@@ -14,33 +14,33 @@ jobs:
         uses: dorny/test-reporter@v1.5.0
         if: success() || failure()
         with:
-          name: "Unit test report"
+          name: pytest-junit
           path: 'pytest.xml'
           reporter: java-junit
           
-      - name: Upload Unit Test Results
-        if: always()
-        uses: actions/upload-artifact@v2
+      -
+        name: Test Report
+        uses: dorny/test-reporter@v1.5.0
+        if: success() || failure()
         with:
-          name: Unit Test Results
-          path: pytest.xml
+          name: "eslint-junit"
+          path: 'eslint-junit.xml'
+          reporter: java-junit
           
-          
-  publish-test-results:
-    name: "Publish Unit Tests Results"
-    needs: test
-    runs-on: ubuntu-latest
-    # the build-and-test job might be skipped, we don't need to run this job then
-    if: success() || failure()
-
-    steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v2
+      -
+        name: Test Report
+        uses: dorny/test-reporter@v1.5.0
+        if: success() || failure()
         with:
-          path: artifacts
+          name: "jest-junit as java-junit"
+          path: 'jest-junit.xml'
+          reporter: java-junit
 
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
+      -
+        name: Test Report
+        uses: dorny/test-reporter@v1.5.0
+        if: success() || failure()
         with:
-          files: artifacts/**/*.xml
-
+          name: "jest-junit"
+          path: 'jest-junit.xml'
+          reporter: jest-junit
